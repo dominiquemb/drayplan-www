@@ -1,0 +1,24 @@
+<pgcard TimeOut="3000" AdditionalClasses="widget-11 card no-border  no-margin widget-loader-bar full-height" ProgressType="bar" Maximize="false" Toggle="false" Close="false" BodyClass="no-padding">
+	<ng-template #CardTitle>
+		<span class="font-montserrat fs-11 all-caps">
+			Power
+		</span>
+	</ng-template>
+
+	<div class="p-l-25 p-r-25 p-b-20">
+		<div class="pull-left">
+			<h2 class="text-info no-margin">Server status: <span class="text-success" [hidden]="rebooting">Running</span> <span class="text-danger" [hidden]="!rebooting">Rebooting..</span></h2>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="p-l-25 p-r-25 p-b-20" [hidden]="rebooting">
+		<button class="btn btn-lg btn-rounded btn-success m-r-20 m-b-10" type="button" (click)="reboot()" [disabled]="rebooting">
+			<i class="fa fa-repeat"></i>&nbsp;<span>Reboot</span>
+		</button>
+	</div>
+	<div class="p-l-25 p-r-25 p-b-20 text-center" [hidden]="!rebooting">
+		<div class="card-body">
+			<img alt="Progress" class="demo-mw-50 image-responsive-height" src="assets/img/demo/progress.svg" />
+		</div>
+	</div>
+</pgcard>

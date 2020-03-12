@@ -1,0 +1,70 @@
+      <div class="card card-transparent">
+        <div class="card-body">
+          <form id="form-personal" role="form" autocomplete="off" [formGroup]="newUserForm" (ngSubmit)="submitForm($event)">
+            <div class="row clearfix">
+              <div class="col-md-6">
+		<div pgFormGroupDefault class="form-group form-group-default required" [class.has-error]="getFormControl('name').invalid && (getFormControl('name').dirty || getFormControl('name').touched)">
+		  <label>Username</label>
+		  <input type="text" class="form-control" name="name" formControlName="name" (keydown.enter)="enterPressed($event)" required>
+		  <div class="invalid-tooltip" *ngIf="getFormControl('name').invalid && (getFormControl('name').dirty || getFormControl('name').touched)">
+		    This field is required.
+		  </div>
+		</div>
+
+		<div pgFormGroupDefault class="form-group form-group-default required" [class.has-error]="getFormControl('password').invalid && (getFormControl('password').dirty || getFormControl('password').touched)">
+		  <label>Password</label>
+		  <input type="text" class="form-control" name="password" formControlName="password"  (keydown.enter)="enterPressed($event)" required>
+		  <div class="invalid-tooltip" *ngIf="getFormControl('password').invalid && (getFormControl('password').dirty || getFormControl('password').touched)">
+		    This field is required.
+		  </div>
+		</div>
+
+		<div pgFormGroupDefault class="form-group form-group-default required" [class.has-error]="getFormControl('email').invalid && (getFormControl('email').dirty || getFormControl('email').touched)">
+		  <label>Email</label>
+		  <input type="text" class="form-control" name="email" formControlName="email" (keydown.enter)="enterPressed($event)">
+		  <div class="invalid-tooltip" *ngIf="getFormControl('email').invalid && (getFormControl('email').dirty || getFormControl('email').touched)">
+		    This field is required.
+		  </div>
+		</div>
+
+<!--
+
+                <div pgFormGroupDefault class="form-group form-group-default required" [class.has-error]="usernamefield.invalid && (usernamefield.dirty || usernamefield.touched)" >
+                  <label>Username</label>
+                  <input type="text" class="form-control" id="name" name="name" formControlName="name"  #usernamefield="ngModel" required >
+                </div>
+                <div *ngIf="usernamefield.invalid && (usernamefield.dirty || usernamefield.touched)" >
+                  <label  *ngIf="usernamefield.errors.required" class="error" >This field is required.</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div pgFormGroupDefault class="form-group form-group-default" [class.has-error]="passwordfield.invalid && (passwordfield.dirty || passwordfield.touched)">
+                  <label>Password</label>
+                  <input type="password" class="form-control" name="password" formControlName="password"  #passwordfield="ngModel" required>
+                </div>
+                <div *ngIf="passwordfield.invalid && (passwordfield.dirty || passwordfield.touched)" >
+                  <label  *ngIf="passwordfield.errors.required" class="error" >This field is required.</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div pgFormGroupDefault class="form-group form-group-default input-group" [class.has-error]="emailfield.invalid && (emailfield.dirty || emailfield.touched)">
+                  <div class="form-input-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" name="email" formControlName="email"  #emailfield="ngModel">
+                  </div>
+                </div>
+                <div *ngIf="emailfield.invalid && (emailfield.dirty || emailfield.touched)" >
+                  <label  *ngIf="emailfield.errors.required" class="error" >This field is required.</label>
+                </div>
+-->
+              </div>
+
+            </div>
+            <br>
+            <button class="btn btn-success" type="submit" >Submit</button>&nbsp;
+	    <button class="btn btn-default">Clear</button>
+	  </form>
+	</div>
+      </div>
