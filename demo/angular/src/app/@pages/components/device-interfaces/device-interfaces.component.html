@@ -3,10 +3,22 @@
           <form id="form-personal" role="form" autocomplete="off" [formGroup]="editInterfaceForm" (ngSubmit)="submitForm($event)">
             <div class="row clearfix">
               <div class="col-md-6">
-		<div pgFormGroupDefault class="form-group form-group-default required" [class.has-error]="getFormControl('name').invalid && (getFormControl('name').dirty || getFormControl('name').touched)">
-		  <label>Username</label>
-		  <input type="text" class="form-control" name="name" formControlName="name" required>
-		  <div class="invalid-tooltip" *ngIf="getFormControl('name').invalid && (getFormControl('name').dirty || getFormControl('name').touched)">
+		<div pgFormGroupDefault class="form-group form-group-default" [class.has-error]="getFormControl('enable').invalid && (getFormControl('enable').dirty || getFormControl('enable').touched)">
+		    <div class="checkbox check-primary checkbox-circle">
+		      <input type="checkbox" [checked]="getFormControl('enable').value"  [value]="getFormControl('enable').value" (change)="toggleCheckbox($event, 'enable')" id="enable">
+		      <label for="enable">Enabled</label>
+		    </div>
+		  <div class="invalid-tooltip" *ngIf="getFormControl('enable').invalid && (getFormControl('enable').dirty || getFormControl('enable').touched)">
+		    This field is required.
+		  </div>
+		</div>
+
+		<div pgFormGroupDefault class="form-group form-group-default" [class.has-error]="getFormControl('lock').invalid && (getFormControl('lock').dirty || getFormControl('lock').touched)">
+		    <div class="checkbox check-primary checkbox-circle">
+		      <input type="checkbox" [checked]="getFormControl('lock').value" [value]="getFormControl('lock').value" (change)="toggleCheckbox($event, 'lock')" id="lock">
+		      <label for="lock">Locked (prevent interface from being deleted)</label>
+		    </div>
+		  <div class="invalid-tooltip" *ngIf="getFormControl('lock').invalid && (getFormControl('lock').dirty || getFormControl('lock').touched)">
 		    This field is required.
 		  </div>
 		</div>
@@ -51,19 +63,21 @@
 					<th>IPv6</th>
 					<th>Subnet</th>
 					<th>Desc</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr *ngFor="let interface of interfaces; let ifname = index">
-					<td class="font-montserrat fs-12 w-50">{{ifname}}</td>
-					<span *ngFor="let itf of interface; let field = index">
-						<td class="font-montserrat fs-12 w-50">{{itf.enable}}</td>
-						<td class="font-montserrat fs-12 w-50">{{itf.if}}</td>
-						<td class="font-montserrat fs-12 w-50">{{itf.ipaddr}}</td>
-						<td class="font-montserrat fs-12 w-50">{{itf.ipaddrv6}}</td>
-						<td class="font-montserrat fs-12 w-50">{{itf.subnet}}</td>
-						<td class="font-montserrat fs-12 w-50">{{itf.descr}}</td>
-					</span>
+				<tr *ngFor="let itf of interfaces; let ifname = index">
+					<td class="font-montserrat fs-12 w-50">{{itf.interface_type}}</td>
+					<td class="font-montserrat fs-12 w-50">{{itf.enable}}</td>
+					<td class="font-montserrat fs-12 w-50">{{itf.if}}</td>
+					<td class="font-montserrat fs-12 w-50">{{itf.ipaddr}}</td>
+					<td class="font-montserrat fs-12 w-50">{{itf.ipaddrv6}}</td>
+					<td class="font-montserrat fs-12 w-50">{{itf.subnet}}</td>
+					<td class="font-montserrat fs-12 w-50">{{itf.descr}}</td>
+					<td class="font-montserrat fs-12 w-50">
+						<button class="btn btn-success" (click)="enableEditingInterface(itf)">Edit</button>
+					</td>
 				</tr>
 			</tbody>
 		</table>

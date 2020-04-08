@@ -10,12 +10,15 @@ import {
 } from '@angular/forms';
 
 @Component({
-  selector: 'app-device-interfaces',
+  selector: 'device-interfaces',
   templateUrl: './device-interfaces.component.html',
   styleUrls: ['./device-interfaces.component.scss']
 })
 export class DeviceInterfacesComponent implements OnInit {
   editingInterface: boolean = false;
+  addingInterface: boolean = false;
+  enable:boolean = true;
+  lock:boolean = false;
   interfaces: Array<any>;
   editedInterface: object;
   editInterfaceForm: FormGroup;
@@ -27,6 +30,29 @@ export class DeviceInterfacesComponent implements OnInit {
 	});
   }
 
+  enableEditingInterface(itf) {
+  	this.editingInterface = itf;
+  }
+
+  enableAddingInterface() {
+  	this.addingInterface = true;
+  }
+
+  toggleCheckbox(evt, name) {
+	  let currentValue = this.editInterfaceForm.controls[name].value;
+	  this.editInterfaceForm.controls[name].setValue(!currentValue);
+	  console.log(this.editInterfaceForm.controls[name]);
+  /*
+    const oldValue = this[name];
+    this[name] = !oldValue;
+    console.log(this[name]);
+    */
+    //    const oldValue = this.editInterfaceForm.controls[ name ].value;
+    //    this.editInterfaceForm.controls[ name ].setValue(!evt.target.value);
+    //    console.log(evt);
+    //    console.log(this.editInterfaceForm.controls[ name ]);
+  }
+
   getFormControl(name) {
     return this.editInterfaceForm.controls[ name ];
   }
@@ -34,7 +60,8 @@ export class DeviceInterfacesComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private http: HttpClient) { 
     this.editInterfaceForm = this.fb.group({
-      chkNewCert :[ 'on', [ Validators.required ] ],
+      enable :[ 'on', [] ],
+      lock: [ false, [] ],
       name :[ '', [ Validators.required ] ],
       password :[ '', [ Validators.required ] ],
       email :[ '', [ Validators.required ] ],
@@ -42,9 +69,13 @@ export class DeviceInterfacesComponent implements OnInit {
       language :[ '', [ Validators.required ] ],
       groups :[ '', [ Validators.required ] ],
     });
+
+    console.log(this.getFormControl('lock'));
     
     
     this.editedInterface = {
+   	'enable': true,
+	'lock': false,
   	'scope': 'user',
 	'act': 'new',
 	'chkNewCert': 'on',
