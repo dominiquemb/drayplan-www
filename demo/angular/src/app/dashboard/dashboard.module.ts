@@ -50,6 +50,7 @@ import { GraphWidgetBasicComponent } from './widgets/graph-widget-basic/graph-wi
 import { DevicePowerComponent } from '../@pages/components/device-power/device-power.component';
 import { DeviceDashboardComponent } from '../@pages/components/device-dashboard/device-dashboard.component';
 import { DeviceUsersComponent } from '../@pages/components/device-users/device-users.component';
+import { DeviceInterfacesComponent } from '../@pages/components/device-interfaces/device-interfaces.component';
 
 
 const components = [
@@ -81,6 +82,7 @@ const components = [
     DeviceDashboardComponent,
     DevicePowerComponent,
     DeviceUsersComponent,
+    DeviceInterfacesComponent,
     RoutesTableComponent,
 ];
 

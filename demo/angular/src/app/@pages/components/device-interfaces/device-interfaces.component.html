@@ -1,6 +1,6 @@
-      <div class="card card-transparent" [hidden]="!addingUser">
+      <div class="card card-transparent" [hidden]="!editingInterface">
         <div class="card-body">
-          <form id="form-personal" role="form" autocomplete="off" [formGroup]="newUserForm" (ngSubmit)="submitForm($event)">
+          <form id="form-personal" role="form" autocomplete="off" [formGroup]="editInterfaceForm" (ngSubmit)="submitForm($event)">
             <div class="row clearfix">
               <div class="col-md-6">
 		<div pgFormGroupDefault class="form-group form-group-default required" [class.has-error]="getFormControl('name').invalid && (getFormControl('name').dirty || getFormControl('name').touched)">
@@ -37,29 +37,33 @@
       </div>
 
 
-	<div class="widget-11-table auto-overflow" [hidden]="addingUser">
+	<div class="widget-11-table auto-overflow" [hidden]="editingInterface || addingInterface">
 		<div class="pull-left">
-			<button class="btn btn-success" (click)="enableAddingUser()">New User</button>
+			<button class="btn btn-success" (click)="enableAddingInterface()">New Interface</button>
 	    	</div>
 		<table class="table table-condensed table-hover">
 			<thead>
 				<tr>
-					<th>Username</th>
-					<th>Groups</th>
-					<th>ID</th>
-					<th>API Keys</th>
-					<th>Expires</th>
-					<th>Description</th>
+					<th>Name</th>
+					<th>Enabled</th>
+					<th>Interface</th>
+					<th>IP</th>
+					<th>IPv6</th>
+					<th>Subnet</th>
+					<th>Desc</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr *ngFor="let user of users; let i = index">
-					<td class="font-montserrat fs-12 w-50">{{user.name}}</td>
-					<td class="font-montserrat fs-12 w-50">{{user.groupname}}</td>
-					<td class="font-montserrat fs-12 w-50">{{user.uid}}</td>
-					<td class="font-montserrat fs-12 w-50" [innerHTML]="getApiKeys(user)"></td>
-					<td class="font-montserrat fs-12 w-50">{{user.expires}}</td>
-					<td class="font-montserrat fs-12 w-50">{{user.descr}}</td>
+				<tr *ngFor="let interface of interfaces; let ifname = index">
+					<td class="font-montserrat fs-12 w-50">{{ifname}}</td>
+					<span *ngFor="let itf of interface; let field = index">
+						<td class="font-montserrat fs-12 w-50">{{itf.enable}}</td>
+						<td class="font-montserrat fs-12 w-50">{{itf.if}}</td>
+						<td class="font-montserrat fs-12 w-50">{{itf.ipaddr}}</td>
+						<td class="font-montserrat fs-12 w-50">{{itf.ipaddrv6}}</td>
+						<td class="font-montserrat fs-12 w-50">{{itf.subnet}}</td>
+						<td class="font-montserrat fs-12 w-50">{{itf.descr}}</td>
+					</span>
 				</tr>
 			</tbody>
 		</table>
