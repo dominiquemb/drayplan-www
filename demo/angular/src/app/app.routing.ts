@@ -26,6 +26,7 @@ import { SocialComponent } from './social/social.component';
 
 // Drayplan components
 import { RoutesTableComponent } from './@pages/components/routes-table/routes-table.component';
+import { DeviceInterfaceEditComponent } from './@pages/components/device-interface-edit/device-interface-edit.component';
 //import { TableWidgetComponent } from './dashboard/widgets/table-widget/table-widget.component.ts';
 import { DeviceDashboardComponent } from './@pages/components/device-dashboard/device-dashboard.component';
 
@@ -49,6 +50,18 @@ export const AppRoutes: Routes = [
     children: [{
       path: 'dashboard',
       component: DeviceDashboardComponent,
+    }],
+  },
+  {
+    path: '',
+    component: CondensedComponent,
+    canActivate: [AuthGuard],
+    data: {
+        breadcrumb: 'Dashboard'
+    },
+    children: [{
+      path: 'interface-edit',
+      component: DeviceInterfaceEditComponent,
     }],
   },
   {

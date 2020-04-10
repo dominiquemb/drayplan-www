@@ -1,57 +1,6 @@
-      <div class="card card-transparent" [hidden]="!editingInterface">
-        <div class="card-body">
-          <form id="form-personal" role="form" autocomplete="off" [formGroup]="editInterfaceForm" (ngSubmit)="submitForm($event)">
-            <div class="row clearfix">
-              <div class="col-md-6">
-		<div pgFormGroupDefault class="form-group form-group-default" [class.has-error]="getFormControl('enable').invalid && (getFormControl('enable').dirty || getFormControl('enable').touched)">
-		    <div class="checkbox check-primary checkbox-circle">
-		      <input type="checkbox" [checked]="getFormControl('enable').value"  [value]="getFormControl('enable').value" (change)="toggleCheckbox($event, 'enable')" id="enable">
-		      <label for="enable">Enabled</label>
-		    </div>
-		  <div class="invalid-tooltip" *ngIf="getFormControl('enable').invalid && (getFormControl('enable').dirty || getFormControl('enable').touched)">
-		    This field is required.
-		  </div>
-		</div>
-
-		<div pgFormGroupDefault class="form-group form-group-default" [class.has-error]="getFormControl('lock').invalid && (getFormControl('lock').dirty || getFormControl('lock').touched)">
-		    <div class="checkbox check-primary checkbox-circle">
-		      <input type="checkbox" [checked]="getFormControl('lock').value" [value]="getFormControl('lock').value" (change)="toggleCheckbox($event, 'lock')" id="lock">
-		      <label for="lock">Locked (prevent interface from being deleted)</label>
-		    </div>
-		  <div class="invalid-tooltip" *ngIf="getFormControl('lock').invalid && (getFormControl('lock').dirty || getFormControl('lock').touched)">
-		    This field is required.
-		  </div>
-		</div>
-
-		<div pgFormGroupDefault class="form-group form-group-default required" [class.has-error]="getFormControl('password').invalid && (getFormControl('password').dirty || getFormControl('password').touched)">
-		  <label>Password</label>
-		  <input type="text" class="form-control" name="password" formControlName="password" required>
-		  <div class="invalid-tooltip" *ngIf="getFormControl('password').invalid && (getFormControl('password').dirty || getFormControl('password').touched)">
-		    This field is required.
-		  </div>
-		</div>
-
-		<div pgFormGroupDefault class="form-group form-group-default required" [class.has-error]="getFormControl('email').invalid && (getFormControl('email').dirty || getFormControl('email').touched)">
-		  <label>Email</label>
-		  <input type="text" class="form-control" name="email" formControlName="email">
-		  <div class="invalid-tooltip" *ngIf="getFormControl('email').invalid && (getFormControl('email').dirty || getFormControl('email').touched)">
-		    This field is required.
-		  </div>
-		</div>
-              </div>
-
-            </div>
-            <br>
-            <button class="btn btn-success" type="submit" >Submit</button>&nbsp;
-	    <button class="btn btn-default">Clear</button>
-	  </form>
-	</div>
-      </div>
-
-
 	<div class="widget-11-table auto-overflow" [hidden]="editingInterface || addingInterface">
 		<div class="pull-left">
-			<button class="btn btn-success" (click)="enableAddingInterface()">New Interface</button>
+			<button class="btn btn-success">New Interface</button>
 	    	</div>
 		<table class="table table-condensed table-hover">
 			<thead>

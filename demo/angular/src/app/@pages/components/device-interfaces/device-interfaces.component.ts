@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Injectable } from '@angular/core';
+import { Router, CanActivate } from '@angular/router';
 import { HttpClient, HttpHeaders, HttpRequest, HttpEvent, HttpHandler, HttpInterceptor } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import {
@@ -17,11 +18,13 @@ import {
 export class DeviceInterfacesComponent implements OnInit {
   editingInterface: boolean = false;
   addingInterface: boolean = false;
-  enable:boolean = true;
-  lock:boolean = false;
   interfaces: Array<any>;
   editedInterface: object;
   editInterfaceForm: FormGroup;
+  currentInterface: any = false;
+  typeOptions: Array<object>;
+  type6Options: Array<object>;
+  mediaoptOptions: Array<object>;
 
   getInterfaces() {
 	this.http.get('https://api.virt-ciso.com/opnsense/getInterfaces')
@@ -32,71 +35,11 @@ export class DeviceInterfacesComponent implements OnInit {
 
   enableEditingInterface(itf) {
   	this.editingInterface = itf;
+	this.router.navigate(['/interface-edit'], { queryParams: { 'if': itf.interface_type } });
   }
 
-  enableAddingInterface() {
-  	this.addingInterface = true;
-  }
-
-  toggleCheckbox(evt, name) {
-	  let currentValue = this.editInterfaceForm.controls[name].value;
-	  this.editInterfaceForm.controls[name].setValue(!currentValue);
-	  console.log(this.editInterfaceForm.controls[name]);
-  /*
-    const oldValue = this[name];
-    this[name] = !oldValue;
-    console.log(this[name]);
-    */
-    //    const oldValue = this.editInterfaceForm.controls[ name ].value;
-    //    this.editInterfaceForm.controls[ name ].setValue(!evt.target.value);
-    //    console.log(evt);
-    //    console.log(this.editInterfaceForm.controls[ name ]);
-  }
-
-  getFormControl(name) {
-    return this.editInterfaceForm.controls[ name ];
-  }
-  
-
-  constructor(private fb: FormBuilder, private http: HttpClient) { 
-    this.editInterfaceForm = this.fb.group({
-      enable :[ 'on', [] ],
-      lock: [ false, [] ],
-      name :[ '', [ Validators.required ] ],
-      password :[ '', [ Validators.required ] ],
-      email :[ '', [ Validators.required ] ],
-      descr :[ '', [ Validators.required ] ],
-      language :[ '', [ Validators.required ] ],
-      groups :[ '', [ Validators.required ] ],
-    });
-
-    console.log(this.getFormControl('lock'));
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) { 
     
-    
-    this.editedInterface = {
-   	'enable': true,
-	'lock': false,
-  	'scope': 'user',
-	'act': 'new',
-	'chkNewCert': 'on',
-	'save': 'save',
-	'priv_delete': null,
-	'api_delete': null,
-	'certid': null,
-	'comment': null,
-	'landing_page': null,
-	'expires': null,
-	'shell': null,
-	'authorizedkeys': null,
-	'ipsecpdk': null,
-	'name': null,
-	'password': null,
-	'email': null,
-	'descr': null,
-	'language': 'Default',
-	'groups[]': 'admins',
-	};
-
 	this.getInterfaces();
   }
 

@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { pgCardModule} from '../@pages/components/card/card.module';
 import { pgSwitchModule } from '../@pages/components/switch/switch.module';
 import { pgTabsModule } from '../@pages/components/tabs/tabs.module';
+import { pgSelectModule} from '../@pages/components/select/select.module';
 
 import { NvD3Module } from 'ngx-nvd3';
 import { NgxEchartsModule } from 'ngx-echarts';
@@ -51,6 +52,7 @@ import { DevicePowerComponent } from '../@pages/components/device-power/device-p
 import { DeviceDashboardComponent } from '../@pages/components/device-dashboard/device-dashboard.component';
 import { DeviceUsersComponent } from '../@pages/components/device-users/device-users.component';
 import { DeviceInterfacesComponent } from '../@pages/components/device-interfaces/device-interfaces.component';
+import { DeviceInterfaceEditComponent } from '../@pages/components/device-interface-edit/device-interface-edit.component';
 
 
 const components = [
@@ -83,12 +85,14 @@ const components = [
     DevicePowerComponent,
     DeviceUsersComponent,
     DeviceInterfacesComponent,
+    DeviceInterfaceEditComponent,
     RoutesTableComponent,
 ];
 
 @NgModule({
   imports: [
     pgCardModule,
+    pgSelectModule,
     FormsModule,
     ReactiveFormsModule,
     pgTabsModule,
