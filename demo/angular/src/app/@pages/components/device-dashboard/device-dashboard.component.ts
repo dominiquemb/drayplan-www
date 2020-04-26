@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, CanActivate } from '@angular/router';
 
 @Component({
   selector: 'app-device-dashboard',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeviceDashboardComponent implements OnInit {
 
-  constructor() { }
+  goToLink(path) {
+	this.router.navigate(['/' + path]);
+  }
+
+  constructor(private router: Router) { 
+  }
 
   ngOnInit() {
   }

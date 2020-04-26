@@ -27,6 +27,9 @@ import { SocialComponent } from './social/social.component';
 // Drayplan components
 import { RoutesTableComponent } from './@pages/components/routes-table/routes-table.component';
 import { DeviceInterfaceEditComponent } from './@pages/components/device-interface-edit/device-interface-edit.component';
+import { DeviceInterfacesComponent } from './@pages/components/device-interfaces/device-interfaces.component';
+import { DeviceUsersComponent } from './@pages/components/device-users/device-users.component';
+import { DevicePowerComponent } from './@pages/components/device-power/device-power.component';
 //import { TableWidgetComponent } from './dashboard/widgets/table-widget/table-widget.component.ts';
 import { DeviceDashboardComponent } from './@pages/components/device-dashboard/device-dashboard.component';
 
@@ -57,11 +60,59 @@ export const AppRoutes: Routes = [
     component: CondensedComponent,
     canActivate: [AuthGuard],
     data: {
+        breadcrumb: 'Routes'
+    },
+    children: [{
+    path: 'routes',
+      component: RoutesTableComponent,
+    }],
+  },
+  {
+    path: '',
+    component: CondensedComponent,
+    canActivate: [AuthGuard],
+    data: {
+        breadcrumb: 'Routes'
+    },
+    children: [{
+    path: 'interfaces',
+      component: DeviceInterfacesComponent,
+    }],
+  },
+  {
+    path: '',
+    component: CondensedComponent,
+    canActivate: [AuthGuard],
+    data: {
         breadcrumb: 'Dashboard'
     },
     children: [{
       path: 'interface-edit',
       component: DeviceInterfaceEditComponent,
+    }],
+  },
+  {
+    path: '',
+    component: CondensedComponent,
+    canActivate: [AuthGuard],
+    data: {
+        breadcrumb: 'Dashboard'
+    },
+    children: [{
+      path: 'users',
+      component: DeviceUsersComponent,
+    }],
+  },
+  {
+    path: '',
+    component: CondensedComponent,
+    canActivate: [AuthGuard],
+    data: {
+        breadcrumb: 'Dashboard'
+    },
+    children: [{
+      path: 'power',
+      component: DevicePowerComponent,
     }],
   },
   {

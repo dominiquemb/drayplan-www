@@ -28,7 +28,10 @@ export class CondensedComponent extends RootLayout implements OnInit {
       },
       {
         label:"WAN",
-        routerLink:"wan",
+	routerLink:"/interface-edit",
+	queryParams: { 
+		if: 'wan'
+	},
         iconType:"pg",
         iconName:"social"
       },

@@ -1,4 +1,5 @@
-      <div class="card card-transparent" [hidden]="!addingUser">
+<div class="padding-25">
+  <div class="card card-transparent" [hidden]="!addingUser">
         <div class="card-body">
           <form id="form-personal" role="form" autocomplete="off" [formGroup]="newUserForm" (ngSubmit)="submitForm($event)">
             <div class="row clearfix">
@@ -64,3 +65,4 @@
 			</tbody>
 		</table>
 	</div>
+</div>
