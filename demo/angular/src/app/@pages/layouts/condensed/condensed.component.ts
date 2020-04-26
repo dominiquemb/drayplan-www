@@ -14,39 +14,64 @@ export class CondensedComponent extends RootLayout implements OnInit {
       {
         label:"Dashboard",
 //        details:"12 New Updates",
-        routerLink:"dashboard",
+	routerLink:"/dashboard",
         iconType:"pg",
         iconName:"home",
         thumbNailClass:"bg-success"
       },
       {
-          label:"Devices",
+          label:"Interfaces",
 //          details:"234 New Emails",
           routerLink:"devices",
           iconType:"pg",
-          iconName:"mail"
+          iconName:"layouts2",
+          toggle:"open",
+          submenu:[
+            {
+              label:"All interfaces",
+	      routerLink:"/interfaces",
+              iconType:"pg",
+              iconName:"layouts2",
+            },
+	      {
+		label:"WAN",
+		routerLink:"/interface-edit",
+		queryParams: { 
+			if: 'wan'
+		},
+		iconType:"pg",
+		iconName:"layouts2"
+	      },
+	      {
+		  label:"LAN",
+		  routerLink:"/interface-edit",
+		  queryParams: { 
+			if: 'lan'
+		  },
+		  iconType:"pg",
+		  iconName:"layouts2"
+	      },
+          ]
       },
       {
-        label:"WAN",
-	routerLink:"/interface-edit",
-	queryParams: { 
-		if: 'wan'
-	},
-        iconType:"pg",
-        iconName:"social"
-      },
-      {
-          label:"LAN",
-          routerLink:"lan",
-          iconType:"pg",
-          iconName:"layouts"
-      },
-      {
-        label:"Insights",
-        routerLink:"insights",
+        label:"Routes",
+	routerLink:"/routes",
         iconType:"pg",
         iconName:"layouts2",
       },
+      {
+        label:"Power",
+	routerLink:"/power",
+        iconType:"pg",
+        iconName:"layouts2",
+      },
+      {
+        label:"Users",
+	routerLink:"/users",
+        iconType:"pg",
+        iconName:"layouts2",
+      },
+      /*
       {
         label:"Insights",
         routerLink:"insights",
@@ -69,7 +94,7 @@ export class CondensedComponent extends RootLayout implements OnInit {
           label:"Profiles",
           iconType:"pg",
           iconName:"form",
-          toggle:"close",
+          toggle:"open",
           submenu:[
             {
               label:"Profiles",
@@ -97,6 +122,7 @@ export class CondensedComponent extends RootLayout implements OnInit {
             }
           ]
       },
+      */
   ];
 
     ngOnInit() {
