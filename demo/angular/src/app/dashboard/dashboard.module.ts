@@ -53,6 +53,9 @@ import { DeviceDashboardComponent } from '../@pages/components/device-dashboard/
 import { DeviceUsersComponent } from '../@pages/components/device-users/device-users.component';
 import { DeviceInterfacesComponent } from '../@pages/components/device-interfaces/device-interfaces.component';
 import { DeviceInterfaceEditComponent } from '../@pages/components/device-interface-edit/device-interface-edit.component';
+import { DeviceFirewallRulesComponent } from '../@pages/components/device-firewall-rules/device-firewall-rules.component';
+import { DeviceSingleGatewaysComponent } from '../@pages/components/device-single-gateways/device-single-gateways.component';
+import { DeviceSingleGatewaysEditComponent } from '../@pages/components/device-single-gateways-edit/device-single-gateways-edit.component';
 
 
 const components = [
@@ -84,6 +87,9 @@ const components = [
     DeviceDashboardComponent,
     DevicePowerComponent,
     DeviceUsersComponent,
+    DeviceFirewallRulesComponent,
+    DeviceSingleGatewaysComponent,
+    DeviceSingleGatewaysEditComponent,
     DeviceInterfacesComponent,
     DeviceInterfaceEditComponent,
     RoutesTableComponent,

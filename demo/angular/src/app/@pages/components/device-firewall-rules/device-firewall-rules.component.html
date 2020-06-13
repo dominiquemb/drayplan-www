@@ -1,0 +1,51 @@
+
+      <div class="card card-transparent">
+        <div class="card-body">
+	  <div class="widget-11-table auto-overflow" [hidden]="editingFirewallRule || addingFirewallRule">
+		<div class="pull-left">
+			<button class="btn btn-success">Add Rule</button>
+	    	</div>
+		<table class="table table-condensed table-hover">
+			<thead>
+				<tr>
+					<th>Protocol</th>
+					<th>Source</th>
+					<th>Port</th>
+					<th>Destination</th>
+					<th>Port</th>
+					<th>Gateway</th>
+					<th>Schedule</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let rule of firewallRules.automatic_rules; let i = index">
+					<td class="font-montserrat fs-12 w-50">{{rule.protocolname}}</td>
+					<td class="font-montserrat fs-12 w-50">{{rule.from}}</td>
+					<td class="font-montserrat fs-12 w-50">{{rule.from_port}}</td>
+					<td class="font-montserrat fs-12 w-50">{{rule.to}}</td>
+					<td class="font-montserrat fs-12 w-50">{{rule.to_port}}</td>
+					<td class="font-montserrat fs-12 w-50">{{rule.gateway}}</td>
+					<td class="font-montserrat fs-12 w-50">{{rule.sched}}</td>
+					<td class="font-montserrat fs-12 w-50">{{rule.description}}</td>
+					<td class="font-montserrat fs-12 w-50">
+					</td>
+				</tr>
+				<tr *ngFor="let rule of firewallRules.custom_rules; let i = index">
+					<td class="font-montserrat fs-12 w-50">{{rule.protocolname}}</td>
+					<td class="font-montserrat fs-12 w-50">{{rule.source}}</td>
+					<td class="font-montserrat fs-12 w-50">{{rule.source_port}}</td>
+					<td class="font-montserrat fs-12 w-50">{{rule.destination}}</td>
+					<td class="font-montserrat fs-12 w-50">{{rule.destination_port}}</td>
+					<td class="font-montserrat fs-12 w-50">{{rule.gateway}}</td>
+					<td class="font-montserrat fs-12 w-50">{{rule.sched}}</td>
+					<td class="font-montserrat fs-12 w-50">{{rule.description}}</td>
+					<td class="font-montserrat fs-12 w-50">
+						<button class="btn btn-success" (click)="enableEditingFirewallRules(rule)">Edit</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+      </div>
+    </div>

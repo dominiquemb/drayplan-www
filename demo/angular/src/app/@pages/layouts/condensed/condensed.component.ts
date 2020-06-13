@@ -21,7 +21,6 @@ export class CondensedComponent extends RootLayout implements OnInit {
       },
       {
           label:"Interfaces",
-//          details:"234 New Emails",
           routerLink:"devices",
           iconType:"pg",
           iconName:"layouts2",
@@ -50,6 +49,48 @@ export class CondensedComponent extends RootLayout implements OnInit {
 		  },
 		  iconType:"pg",
 		  iconName:"layouts2"
+	      },
+          ]
+      },
+      {
+          label:"Firewall Rules",
+          routerLink:"devices",
+          iconType:"pg",
+          iconName:"layouts2",
+          toggle:"open",
+          submenu:[
+	      {
+		label:"WAN",
+		routerLink:"/firewall-rules",
+		queryParams: { 
+			if: 'wan'
+		},
+		iconType:"pg",
+		iconName:"layouts2"
+	      },
+	      {
+		  label:"LAN",
+		  routerLink:"/firewall-rules",
+		  queryParams: { 
+			if: 'lan'
+		  },
+		  iconType:"pg",
+		  iconName:"layouts2"
+	      },
+          ]
+      },
+      {
+          label:"Gateways",
+          routerLink:"devices",
+          iconType:"pg",
+          iconName:"layouts2",
+          toggle:"open",
+          submenu:[
+	      {
+		label:"Single",
+		routerLink:"/single-gateways",
+		iconType:"pg",
+		iconName:"layouts2"
 	      },
           ]
       },

@@ -28,6 +28,9 @@ import { SocialComponent } from './social/social.component';
 import { RoutesTableComponent } from './@pages/components/routes-table/routes-table.component';
 import { DeviceInterfaceEditComponent } from './@pages/components/device-interface-edit/device-interface-edit.component';
 import { DeviceInterfacesComponent } from './@pages/components/device-interfaces/device-interfaces.component';
+import { DeviceFirewallRulesComponent } from './@pages/components/device-firewall-rules/device-firewall-rules.component';
+import { DeviceSingleGatewaysComponent } from './@pages/components/device-single-gateways/device-single-gateways.component';
+import { DeviceSingleGatewaysEditComponent } from './@pages/components/device-single-gateways-edit/device-single-gateways-edit.component';
 import { DeviceUsersComponent } from './@pages/components/device-users/device-users.component';
 import { DevicePowerComponent } from './@pages/components/device-power/device-power.component';
 //import { TableWidgetComponent } from './dashboard/widgets/table-widget/table-widget.component.ts';
@@ -65,6 +68,42 @@ export const AppRoutes: Routes = [
     children: [{
     path: 'routes',
       component: RoutesTableComponent,
+    }],
+  },
+  {
+    path: '',
+    component: CondensedComponent,
+    canActivate: [AuthGuard],
+    data: {
+        breadcrumb: 'Firewall Rules'
+    },
+    children: [{
+    path: 'firewall-rules',
+      component: DeviceFirewallRulesComponent,
+    }],
+  },
+  {
+    path: '',
+    component: CondensedComponent,
+    canActivate: [AuthGuard],
+    data: {
+        breadcrumb: 'Gateways - Single'
+    },
+    children: [{
+    path: 'single-gateways',
+      component: DeviceSingleGatewaysComponent,
+    }],
+  },
+  {
+    path: '',
+    component: CondensedComponent,
+    canActivate: [AuthGuard],
+    data: {
+        breadcrumb: 'Edit Gateways - Single'
+    },
+    children: [{
+    path: 'single-gateway-edit',
+      component: DeviceSingleGatewaysEditComponent,
     }],
   },
   {
