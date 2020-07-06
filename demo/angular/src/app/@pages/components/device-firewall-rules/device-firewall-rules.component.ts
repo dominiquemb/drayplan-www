@@ -34,9 +34,9 @@ export class DeviceFirewallRulesComponent implements OnInit {
 	});
   }
 
-  enableEditingFirewallRule(rule) {
+  enableEditingFirewallRules(rule) {
   	this.editingFirewallRule = rule;
-	this.router.navigate(['/firewall-rule-edit'], { queryParams: { 'if': rule.interface, 'id': rule.id } });
+	this.router.navigate(['/device-edit-form'], { queryParams: { 'if': rule.interface, 'id': rule.id, 'route': 'firewall_rules_edit' } });
   }
 
   constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) { 

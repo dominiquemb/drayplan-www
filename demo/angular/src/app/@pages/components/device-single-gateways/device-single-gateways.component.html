@@ -2,7 +2,7 @@
         <div class="card-body">
 	  <div class="widget-11-table auto-overflow" [hidden]="editingItem || addingItem">
 		<div class="pull-left">
-			<button class="btn btn-success">Add</button>
+			<button class="btn btn-success" (click)="enableAddingItem()">Add</button>
 	    	</div>
 		<table class="table table-condensed table-hover">
 			<thead>
@@ -35,7 +35,7 @@
 					<td class="font-montserrat fs-12 w-50">{{item.online}}</td>
 					<td class="font-montserrat fs-12 w-50">{{item.descr}}</td>
 					<td class="font-montserrat fs-12 w-50">
-						<button class="btn btn-success" (click)="enableEditingItem(item)">Edit</button>
+						<button class="btn btn-success" (click)="enableEditingItem(i)">Edit</button>
 					</td>
 				</tr>
 			</tbody>

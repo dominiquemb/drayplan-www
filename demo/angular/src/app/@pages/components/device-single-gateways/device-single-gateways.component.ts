@@ -30,9 +30,13 @@ export class DeviceSingleGatewaysComponent implements OnInit {
 	});
   }
 
-  enableEditingItem(item) {
-  	this.editingItem = item;
-	this.router.navigate(['/single-gateway-edit'], { queryParams: { 'id': item.id } });
+  enableAddingItem() {
+	this.router.navigate(['/single-gateway-edit']);
+  }
+
+  enableEditingItem(id) {
+  	this.editingItem = id;
+	this.router.navigate(['/single-gateway-edit'], { queryParams: { 'id': id } });
   }
 
   constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) { 

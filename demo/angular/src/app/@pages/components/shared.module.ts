@@ -30,6 +30,9 @@ import { ListItemComponent} from './list-view/list-item/list-item.component';
 import { ListViewContainerComponent } from './list-view/list-view-container/list-view-container.component';
 import { pgRetinaDirective } from './retina/retina.directive';
 import { AuthComponent } from './auth/auth.component';
+// import { DeviceSingleGatewaysEditComponent } from './device-single-gateways-edit/device-single-gateways-edit.component';
+// import { DeviceSingleGatewaysComponent } from './device-single-gateways/device-single-gateways.component';
+// import { DeviceFirewallRulesComponent } from './device-firewall-rules/device-firewall-rules.component';
 // import { DeviceInterfaceEditComponent } from './device-interface-edit/device-interface-edit.component';
 // import { DeviceInterfacesComponent } from './device-interfaces/device-interfaces.component';
 // import { DeviceUsersComponent } from './device-users/device-users.component';
@@ -64,6 +67,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   ListViewContainerComponent,
   pgRetinaDirective,
   AuthComponent,
+  // DeviceSingleGatewaysEditComponent,
+  // DeviceSingleGatewaysComponent,
+  // DeviceFirewallRulesComponent,
   // DeviceInterfaceEditComponent,
   // DeviceInterfacesComponent,
   // DeviceUsersComponent,

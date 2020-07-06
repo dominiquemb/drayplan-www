@@ -20,7 +20,7 @@ import {
 export class DeviceSingleGatewaysEditComponent implements OnInit {
   editingItem: boolean = false;
   addingItem: boolean = false;
-  id: number;
+  id: any;
   formHtml: any;
   items: Array<any>;
   editedItem: object;
@@ -66,40 +66,25 @@ export class DeviceSingleGatewaysEditComponent implements OnInit {
 	}
   	this.http.post(url, this.editedItem)
 	.subscribe((data: any) => {
-	console.log(data);
-	//	this.router.navigate(['/dashboard']);
+		const { success } = data;
+		if (success) { 
+			this.router.navigate(['/single-gateways']);
+		}
 	});
   }
   getItemById(id) {
 	this.id = id;
 	this.http.get(`https://api.virt-ciso.com/opnsense/editSingleGateway?id=${id}`)
 	.subscribe((data: any) => {
-	console.log(data);
 		this.formHtml = this._sanitizer.bypassSecurityTrustHtml(data.html);
-	/*
-	    this.editingItem = true;
-	    this.currentInterface = data;
+	});
+  }
 
-	    this.editItemForm = this.fb.group({
-	    	'enable' :[ data.enable, [] ], //checkbox
-		'lock': [ data.lock, [] ], // checkbox
-	      'descr':[ data.descr, [] ],
-	      'blockpriv':[ data.blockpriv, [ ] ], // checkbox
-	      'blockbogons':[ data.blockbogons, [ ] ], // checkbox
-	      'type':[ data.type, [ ] ], // dropdown
-	      'type6':[ data.type6, [] ], // dropdown
-	      'spoofmac':[ data.spoofmac, [] ],
-	      'mtu':[ data.mtu, [] ],
-	      'mss':[ data.mss, [] ],
-	      'mediaopt':[ data.mediaopt, [] ], // dropdown
-	      'ipaddr':[ data.ipaddr, [] ],
-	      'subnet':[ data.subnet, [] ], // dropdown
-	      'gateway':[ data.gateway, [] ],
-	      'track6-prefix-id--hex':[ data['track6-prefix-id--hex'], [] ],
-	      'dhcpd6track6allowoverride': [ data['dhcpd6track6allowoverride'], []  ], // checkbox
-	      'track6-interface': [ data['track6-interface'], []  ], // dropdown
-	    });
-	    */
+  getItemForm() {
+	this.id = false;
+	this.http.get(`https://api.virt-ciso.com/opnsense/editSingleGateway`)
+	.subscribe((data: any) => {
+		this.formHtml = this._sanitizer.bypassSecurityTrustHtml(data.html);
 	});
   }
 
@@ -209,7 +194,8 @@ export class DeviceSingleGatewaysEditComponent implements OnInit {
 				this.getItemById(id);
 			}
 			else {
-				this.router.navigate(['/dashboard']);
+				this.getItemForm();
+				//this.router.navigate(['/dashboard']);
 			}
 		}
 	  });

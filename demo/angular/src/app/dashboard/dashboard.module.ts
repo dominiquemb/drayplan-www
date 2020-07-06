@@ -55,6 +55,7 @@ import { DeviceInterfacesComponent } from '../@pages/components/device-interface
 import { DeviceInterfaceEditComponent } from '../@pages/components/device-interface-edit/device-interface-edit.component';
 import { DeviceFirewallRulesComponent } from '../@pages/components/device-firewall-rules/device-firewall-rules.component';
 import { DeviceSingleGatewaysComponent } from '../@pages/components/device-single-gateways/device-single-gateways.component';
+import { DeviceEditFormComponent } from '../@pages/components/device-edit-form/device-edit-form.component';
 import { DeviceSingleGatewaysEditComponent } from '../@pages/components/device-single-gateways-edit/device-single-gateways-edit.component';
 
 
@@ -89,6 +90,7 @@ const components = [
     DeviceUsersComponent,
     DeviceFirewallRulesComponent,
     DeviceSingleGatewaysComponent,
+    DeviceEditFormComponent,
     DeviceSingleGatewaysEditComponent,
     DeviceInterfacesComponent,
     DeviceInterfaceEditComponent,
