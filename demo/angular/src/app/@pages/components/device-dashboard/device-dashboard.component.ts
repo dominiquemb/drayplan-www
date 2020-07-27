@@ -8,7 +8,8 @@ import { Router, CanActivate } from '@angular/router';
 })
 export class DeviceDashboardComponent implements OnInit {
 
-  goToLink(path) {
+  goToLink(evt, path) {
+  	evt.preventDefault();
 	this.router.navigate(['/' + path]);
   }
 

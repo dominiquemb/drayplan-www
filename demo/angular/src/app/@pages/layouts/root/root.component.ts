@@ -28,7 +28,7 @@ export class RootLayout implements OnInit,OnDestroy {
   _pageContainerClass = "";
   _contentClass = "";
   _footer:boolean = true;
-  _menuDrawerOpen:boolean = false;
+  _menuDrawerOpen:boolean = true;
   //Mobile
   _secondarySideBar:boolean = false;
    //Mobile

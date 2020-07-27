@@ -50,12 +50,20 @@ import { TodoListWidgetComponent } from './widgets/todo-list-widget/todo-list-wi
 import { GraphWidgetBasicComponent } from './widgets/graph-widget-basic/graph-widget-basic.component';
 import { DevicePowerComponent } from '../@pages/components/device-power/device-power.component';
 import { DeviceDashboardComponent } from '../@pages/components/device-dashboard/device-dashboard.component';
+import { DeviceFirewallDashboardComponent } from '../@pages/components/device-firewall-dashboard/device-firewall-dashboard.component';
+import { DeviceFreeradiusDashboardComponent } from '../@pages/components/device-freeradius-dashboard/device-freeradius-dashboard.component';
+import { DeviceServicesSupportDashboardComponent } from '../@pages/components/device-services-support-dashboard/device-services-support-dashboard.component';
+import { DeviceInterfacesWirelessDashboardComponent } from '../@pages/components/device-interfaces-wireless-dashboard/device-interfaces-wireless-dashboard.component';
+import { DeviceEndpointDefenseDashboardComponent } from '../@pages/components/device-endpoint-defense-dashboard/device-endpoint-defense-dashboard.component';
+import { DeviceAdministrationDashboardComponent } from '../@pages/components/device-administration-dashboard/device-administration-dashboard.component';
+import { DeviceHdnCyberDefenseDashboardComponent } from '../@pages/components/device-hdn-cyber-defense-dashboard/device-hdn-cyber-defense-dashboard.component';
 import { DeviceUsersComponent } from '../@pages/components/device-users/device-users.component';
 import { DeviceInterfacesComponent } from '../@pages/components/device-interfaces/device-interfaces.component';
 import { DeviceInterfaceEditComponent } from '../@pages/components/device-interface-edit/device-interface-edit.component';
 import { DeviceFirewallRulesComponent } from '../@pages/components/device-firewall-rules/device-firewall-rules.component';
 import { DeviceSingleGatewaysComponent } from '../@pages/components/device-single-gateways/device-single-gateways.component';
 import { DeviceEditFormComponent } from '../@pages/components/device-edit-form/device-edit-form.component';
+import { DeviceDataSummaryComponent } from '../@pages/components/device-data-summary/device-data-summary.component';
 import { DeviceSingleGatewaysEditComponent } from '../@pages/components/device-single-gateways-edit/device-single-gateways-edit.component';
 
 
@@ -86,11 +94,19 @@ const components = [
     QuickStatsWidgetComponent,
     TodoListWidgetComponent,
     DeviceDashboardComponent,
+    DeviceFirewallDashboardComponent,
+    DeviceServicesSupportDashboardComponent,
+    DeviceInterfacesWirelessDashboardComponent,
+    DeviceHdnCyberDefenseDashboardComponent,
     DevicePowerComponent,
     DeviceUsersComponent,
     DeviceFirewallRulesComponent,
+    DeviceFreeradiusRulesComponent,
+    DeviceEndpointDefenseDashboardComponent,
+    DeviceAdministrationDashboardComponent,
     DeviceSingleGatewaysComponent,
     DeviceEditFormComponent,
+    DeviceDataSummaryComponent,
     DeviceSingleGatewaysEditComponent,
     DeviceInterfacesComponent,
     DeviceInterfaceEditComponent,

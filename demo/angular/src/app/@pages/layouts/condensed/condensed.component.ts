@@ -10,6 +10,7 @@ import { Router, CanActivate } from '@angular/router';
   encapsulation: ViewEncapsulation.None,
 })
 export class CondensedComponent extends RootLayout implements OnInit {
+    /* commenting out this menu because I decided to use the OpnSense menu within the iframe instead */
     menuLinks = [
       {
         label:"Dashboard",
@@ -54,7 +55,7 @@ export class CondensedComponent extends RootLayout implements OnInit {
       },
       {
           label:"Firewall Rules",
-          routerLink:"devices",
+          routerLink:"",
           iconType:"pg",
           iconName:"layouts2",
           toggle:"open",
@@ -112,6 +113,9 @@ export class CondensedComponent extends RootLayout implements OnInit {
         iconType:"pg",
         iconName:"layouts2",
       },
+      /* End HakDefNet menu */
+
+      /* the stuff below is just an example */
       /*
       {
         label:"Insights",
@@ -164,6 +168,7 @@ export class CondensedComponent extends RootLayout implements OnInit {
           ]
       },
       */
+  // end commented-out HakDefNet menu
   ];
 
     ngOnInit() {

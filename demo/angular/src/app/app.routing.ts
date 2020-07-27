@@ -30,12 +30,20 @@ import { DeviceInterfaceEditComponent } from './@pages/components/device-interfa
 import { DeviceInterfacesComponent } from './@pages/components/device-interfaces/device-interfaces.component';
 import { DeviceFirewallRulesComponent } from './@pages/components/device-firewall-rules/device-firewall-rules.component';
 import { DeviceEditFormComponent } from './@pages/components/device-edit-form/device-edit-form.component';
+import { DeviceDataSummaryComponent } from './@pages/components/device-data-summary/device-data-summary.component';
 import { DeviceSingleGatewaysComponent } from './@pages/components/device-single-gateways/device-single-gateways.component';
 import { DeviceSingleGatewaysEditComponent } from './@pages/components/device-single-gateways-edit/device-single-gateways-edit.component';
 import { DeviceUsersComponent } from './@pages/components/device-users/device-users.component';
 import { DevicePowerComponent } from './@pages/components/device-power/device-power.component';
 //import { TableWidgetComponent } from './dashboard/widgets/table-widget/table-widget.component.ts';
 import { DeviceDashboardComponent } from './@pages/components/device-dashboard/device-dashboard.component';
+import { DeviceFirewallDashboardComponent } from './@pages/components/device-firewall-dashboard/device-firewall-dashboard.component';
+import { DeviceFreeradiusDashboardComponent } from './@pages/components/device-firewall-dashboard/device-freeradius-dashboard.component';
+import { DeviceServicesSupportDashboardComponent } from './@pages/components/device-services-support-dashboard/device-services-support-dashboard.component';
+import { DeviceInterfacesWirelessDashboardComponent } from './@pages/components/device-interfaces-wireless-dashboard/device-interfaces-wireless-dashboard.component';
+import { DeviceEndpointDefenseDashboardComponent } from './@pages/components/device-endpoint-defense-dashboard/device-endpoint-defense-dashboard.component';
+import { DeviceAdministrationDashboardComponent } from './@pages/components/device-administration-dashboard/device-administration-dashboard.component';
+import { DeviceHdnCyberDefenseDashboardComponent } from './@pages/components/device-hdn-cyber-defense-dashboard/device-hdn-cyber-defense-dashboard.component';
 
 export const AppRoutes: Routes = [
 
@@ -64,6 +72,90 @@ export const AppRoutes: Routes = [
     component: CondensedComponent,
     canActivate: [AuthGuard],
     data: {
+        breadcrumb: 'Security Appliance Dashboard'
+    },
+    children: [{
+      path: 'firewall-dashboard',
+      component: DeviceFirewallDashboardComponent,
+    }],
+  },
+  {
+    path: '',
+    component: CondensedComponent,
+    canActivate: [AuthGuard],
+    data: {
+    breadcrumb: 'Administration / FreeRADIUS Dashboard'
+    },
+    children: [{
+      path: 'freeradius-dashboard',
+      component: DeviceFreeradiusDashboardComponent,
+    }],
+  },
+  {
+    path: '',
+    component: CondensedComponent,
+    canActivate: [AuthGuard],
+    data: {
+    breadcrumb: 'Services and Support Dashboard'
+    },
+    children: [{
+      path: 'services-support-dashboard',
+      component: DeviceServicesSupportDashboardComponent,
+    }],
+  },
+  {
+    path: '',
+    component: CondensedComponent,
+    canActivate: [AuthGuard],
+    data: {
+	    breadcrumb: 'Security Appliance / Wireless'
+    },
+    children: [{
+      path: 'interfaces-wireless-dashboard',
+      component: DeviceInterfacesWirelessDashboardComponent,
+    }],
+  },
+  {
+    path: '',
+    component: CondensedComponent,
+    canActivate: [AuthGuard],
+    data: {
+        breadcrumb: 'Endpoint Defense Dashboard'
+    },
+    children: [{
+      path: 'endpoint-defense-dashboard',
+      component: DeviceEndpointDefenseDashboardComponent,
+    }],
+  },
+  {
+    path: '',
+    component: CondensedComponent,
+    canActivate: [AuthGuard],
+    data: {
+        breadcrumb: 'HDN Cyber Defense Dashboard'
+    },
+    children: [{
+      path: 'hdn-cyber-defense-dashboard',
+      component: DeviceHdnCyberDefenseDashboardComponent,
+    }],
+  },
+  {
+    path: '',
+    component: CondensedComponent,
+    canActivate: [AuthGuard],
+    data: {
+        breadcrumb: 'Administration Dashboard'
+    },
+    children: [{
+      path: 'administration-dashboard',
+      component: DeviceAdministrationDashboardComponent,
+    }],
+  },
+  {
+    path: '',
+    component: CondensedComponent,
+    canActivate: [AuthGuard],
+    data: {
         breadcrumb: 'Routes'
     },
     children: [{
@@ -81,6 +173,18 @@ export const AppRoutes: Routes = [
     children: [{
     path: 'device-edit-form',
       component: DeviceEditFormComponent,
+    }],
+  },
+  {
+    path: '',
+    component: CondensedComponent,
+    canActivate: [AuthGuard],
+    data: {
+        breadcrumb: 'Routes'
+    },
+    children: [{
+    path: 'device-data-summary',
+      component: DeviceDataSummaryComponent,
     }],
   },
   {

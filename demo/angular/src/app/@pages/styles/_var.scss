@@ -27,8 +27,8 @@ $color-master-darkest:mix($color-master, #000, 18%) ;
 $color-white: #fff ;
 $color-black: #000 ;
 
-$color-success: #10cfbd ;
-$color-complete : #48b0f7 ;
+$color-success: #314f7c ;
+$color-complete: #48b0f7;
 $color-primary: #6d5cae ;
 $color-warning: #f8d053 ;
 $color-danger: #f55753 ;
@@ -41,7 +41,7 @@ $base-font-family: -apple-system, BlinkMacSystemFont,  "Segoe UI", "Roboto", "Ox
 //Menu Animation Curve
 $menu-bezier:.05, .74, .27, .99 ;
 $menu-icon-size:40px ;
-$color-menu :#2b303b ;
+$color-menu:#2b303b ;
 $color-menu-dark :mix($color-menu, #000, 77%) ;
 $color-menu-darker :mix($color-menu, #000, 90%) ;
 
@@ -96,7 +96,7 @@ $form-group-height: 54px ;
 $form-control-border-color: rgba($color-black, .07) ;
 
 //Dashboard
-$dashboard-background : #f5f5f5 ;
+$dashboard-background: #f5f5f5 ;
 
 //Mixing Color varriable for creating both light and dark colors
 $mix-percentage-dark: 81% ;
