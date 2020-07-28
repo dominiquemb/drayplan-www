@@ -101,7 +101,7 @@ const components = [
     DevicePowerComponent,
     DeviceUsersComponent,
     DeviceFirewallRulesComponent,
-    DeviceFreeradiusRulesComponent,
+    DeviceFreeradiusDashboardComponent,
     DeviceEndpointDefenseDashboardComponent,
     DeviceAdministrationDashboardComponent,
     DeviceSingleGatewaysComponent,

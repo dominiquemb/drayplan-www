@@ -38,7 +38,7 @@ import { DevicePowerComponent } from './@pages/components/device-power/device-po
 //import { TableWidgetComponent } from './dashboard/widgets/table-widget/table-widget.component.ts';
 import { DeviceDashboardComponent } from './@pages/components/device-dashboard/device-dashboard.component';
 import { DeviceFirewallDashboardComponent } from './@pages/components/device-firewall-dashboard/device-firewall-dashboard.component';
-import { DeviceFreeradiusDashboardComponent } from './@pages/components/device-firewall-dashboard/device-freeradius-dashboard.component';
+import { DeviceFreeradiusDashboardComponent } from './@pages/components/device-freeradius-dashboard/device-freeradius-dashboard.component';
 import { DeviceServicesSupportDashboardComponent } from './@pages/components/device-services-support-dashboard/device-services-support-dashboard.component';
 import { DeviceInterfacesWirelessDashboardComponent } from './@pages/components/device-interfaces-wireless-dashboard/device-interfaces-wireless-dashboard.component';
 import { DeviceEndpointDefenseDashboardComponent } from './@pages/components/device-endpoint-defense-dashboard/device-endpoint-defense-dashboard.component';
@@ -47,13 +47,26 @@ import { DeviceHdnCyberDefenseDashboardComponent } from './@pages/components/dev
 
 export const AppRoutes: Routes = [
 
-  {
+/*  {
     path: '',
     data: {
         breadcrumb: 'Home'
     },
     component: CondensedComponent,
     canActivate: [AuthGuard],
+  },
+  */
+  {
+    path: '',
+    component: CondensedComponent,
+    canActivate: [AuthGuard],
+    data: {
+        breadcrumb: 'Home'
+    },
+    children: [{
+      path: '',
+      component: DeviceDashboardComponent,
+    }],
   },
   {
     path: '',
