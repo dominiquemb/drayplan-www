@@ -60,6 +60,12 @@
 			<div class="">
 				<!-- START EMAIL MOBILE TOGGLE -->
 				<a href="javascript:void(0);" class="toggle-secondary-sidebar" (click)="toggleSecondarySideBar()" *ngIf="_layoutOption === 'email'">Inbox <span class="text-info">(12)</span> <span class="caret"></span></a>
+				<!-- Back Button -->
+				
+					 <button class="btn btn-success" onclick="history.back()" style="margin-left: 50px;">Go Back</button>
+					
+				<!-- Back Button -->
+
 				<!-- END EMAIL MOBILE TOGGLE -->
 
 				<div class="brand inline" [class.d-none]="_layoutOption === 'email'">
