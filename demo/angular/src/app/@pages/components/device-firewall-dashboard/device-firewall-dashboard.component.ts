@@ -13,6 +13,12 @@ export class DeviceFirewallDashboardComponent implements OnInit {
 	this.router.navigate(['/' + path]);
   }
 
+  goToConfigLink(evt, path) {
+  	evt.preventDefault();
+	window.location.href = path + "&token=" + localStorage.getItem('drayplan_token');
+	//console.log(path + "&token=" + localStorage.getItem('drayplan_token'));
+  }
+
   constructor(private router: Router) { 
   }
 

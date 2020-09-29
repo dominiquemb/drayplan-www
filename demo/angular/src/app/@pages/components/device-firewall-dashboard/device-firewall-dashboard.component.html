@@ -5,10 +5,12 @@
       <div class="row">
         <div class="col-md-4 m-b-10">
           <div class="ar-3-1 widget-1-wrapper">
-	    <a href="" (click)="goToLink($event, 'routes')">
+<!--		  <a href="{{'https://10.0.5.200/interfaces.php?if=wan' + '&token=' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImlhdCI6MTYwMDk3MzUxMywiZXhwIjoxNjAxNTc4MzEzfQ.OymFrLMMYgFAnYpveZPTgJVg6shCMhducqmZ21oYzY8'}}">
+-->
+	    <a href="" (click)="goToConfigLink($event, 'https://10.0.5.200/interfaces.php?if=wan')">
 		<pgcard AdditionalClasses="widget-11 card no-border  no-margin widget-loader-bar full-height" ProgressType="bar" Maximize="false" Toggle="false" Close="false" BodyClass="text-center fs-18">
 		<img src="/assets/img/dashboard/icons/firewall.png" width="145" height="145" />
-		<h3>Routes</h3>
+		<h3>WAN</h3>
 	    	</pgcard>
 	    </a>
           </div>
@@ -16,10 +18,12 @@
 
         <div class="col-md-4 m-b-10">
           <div class="ar-3-1 widget-1-wrapper">
-	    <a href="" (click)="goToLink($event, 'interfaces')">
+<!--	    <a href="https://10.0.5.200/interfaces.php?if=lan">
+	-->
+	    <a href="" (click)="goToConfigLink($event, 'https://10.0.5.200/interfaces.php?if=lan')">
 		<pgcard AdditionalClasses="widget-11 card no-border  no-margin widget-loader-bar full-height" ProgressType="bar" Maximize="false" Toggle="false" Close="false" BodyClass="text-center fs-18">
 		<img src="/assets/img/dashboard/icons/interfaces.png" width="145" height="145" />
-		<h3>Interfaces</h3>
+		<h3>LAN</h3>
 	    	</pgcard>
 	    </a>
           </div>
