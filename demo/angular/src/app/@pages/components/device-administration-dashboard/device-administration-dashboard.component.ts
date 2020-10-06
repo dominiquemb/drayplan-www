@@ -13,6 +13,14 @@ export class DeviceAdministrationDashboardComponent implements OnInit {
 	this.router.navigate(['/' + path]);
   }
 
+  goToConfigLink(evt, path) {
+        evt.preventDefault();
+	// TODO: change the ? to a & depending on the URL later
+        window.location.href = path + "?token=" + localStorage.getItem('drayplan_token');
+        //console.log(path + "&token=" + localStorage.getItem('drayplan_token'));
+  }
+
+
   constructor(private router: Router) { 
   }
 
